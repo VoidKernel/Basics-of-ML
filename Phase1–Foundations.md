@@ -1,263 +1,126 @@
-Phase 1 – Foundations
+# Phase 1 – Foundations
 
-Python (numpy, pandas)
+## Core Tools
 
-statistics basics
+- **Python** (numpy, pandas)
+- **Statistics basics**
+- **Scikit-learn**
+- **Data preprocessing**
 
-scikit-learn
+---
 
-data preprocessing
+## 1. NumPy (Numbers, Fast, No Feelings) 🧠
 
-1. NumPy (numbers, fast, no feelings)(brain)
+**Used for:**
+- Arrays
+- Vectors & matrices
+- Linear algebra
+- ML math
+- Speed
 
-Used for:
+---
 
-Arrays
+## 2. Pandas (Tables, CSVs, Emotional Damage) ✋
 
-Vectors & matrices
+**Used for:**
+- CSV / Excel
+- Cleaning data
+- Filtering
+- Feature engineering
+- Data analysis
 
-Linear algebra
+---
 
-ML math
+## 3. Statistics Basics
 
-Speed
+### 3.1 Types of Data
 
-2. Pandas (tables, CSVs, emotional damage)(hands)
+#### 3.1.1 Numerical (Quantitative)
 
-Used for:
+- **Continuous:** can take any value (height, weight, temperature)
+- **Discrete:** countable (number of students, cars)
 
-CSV / Excel
+#### 3.1.2 Categorical (Qualitative)
 
-Cleaning data
+- **Nominal:** names, labels (red, blue, cat, dog)
+- **Ordinal:** ordered categories (small, medium, large; grades A, B, C)
 
-Filtering
+### 3.2 Measures of Central Tendency
 
-Feature engineering
+These describe "typical" value.
 
-Data analysis
+| Measure        | Formula / Idea                    |
+|----------------|-----------------------------------|
+| Mean (average) | $\frac{\sum x_i}{n}$             |
+| Median         | Middle value after sorting        |
+| Mode           | Most frequent value               |
 
+**Example:** [1, 2, 2, 3, 4]
+- Mean = 2.4
+- Median = 2
+- Mode = 2
 
-statistics basics
-
-1. Types of Data
-
-1.1 Numerical (Quantitative)
-
-Continuous: can take any value (height, weight, temperature)
-
-Discrete: countable (number of students, cars)
-
-1.2 Categorical (Qualitative)
-
-Nominal: names, labels (red, blue, cat, dog)
-
-Ordinal: ordered categories (small, medium, large; grades A, B, C)
-
-2. Measures of Central Tendency
-
-These describe “typical” value.
-
-Measure	Formula / Idea
-Mean (average)	
-∑
-𝑥
-𝑖
-𝑛
-n
-∑x
-i
-	​
-
-	​
-
-
-Median	Middle value after sorting
-Mode	Most frequent value
-
-Example: [1, 2, 2, 3, 4]
-
-Mean = 2.4
-
-Median = 2
-
-Mode = 2
-
-3. Measures of Spread (Dispersion)
+### 3.3 Measures of Spread (Dispersion)
 
 These tell you how scattered your data is.
 
-Measure	Formula / Idea
-Range	Max – Min
-Variance	
-∑
-(
-𝑥
-𝑖
-−
-𝑥
-ˉ
-)
-2
-𝑛
-n
-∑(x
-i
-	​
+| Measure                    | Formula / Idea                           |
+|----------------------------|------------------------------------------|
+| Range                      | Max – Min                                |
+| Variance                   | $\frac{\sum (x_i - \bar{x})^2}{n}$      |
+| Standard Deviation (SD)    | $\sqrt{Variance}$                        |
+| Interquartile Range (IQR)  | Q3 – Q1                                  |
 
-−
-x
-ˉ
-)
-2
-	​
+> **High SD** → data all over the place  
+> **Low SD** → data hugs the mean
 
-
-Standard Deviation (SD)	
-𝑉
-𝑎
-𝑟
-𝑖
-𝑎
-𝑛
-𝑐
-𝑒
-Variance
-	​
-
-
-Interquartile Range (IQR)	Q3 – Q1
-
-High SD → data all over the place. Low SD → data hugs the mean.
-
-4. Probability Basics
+### 3.4 Probability Basics
 
 Probability of event A:
 
-𝑃
-(
-𝐴
-)
-=
-Number of favorable outcomes
-Total outcomes
-P(A)=
-Total outcomes
-Number of favorable outcomes
-	​
+$$P(A) = \frac{\text{Number of favorable outcomes}}{\text{Total outcomes}}$$
 
+**Example:** roll a die → P(get 3) = 1/6
 
-Example: roll a die → P(get 3) = 1/6
+### 3.5 Common Distributions
 
-5. Common Distributions
+- **Normal (Gaussian):** bell curve, mean = median = mode
+- **Uniform:** all outcomes equally likely
+- **Binomial:** yes/no repeated experiments (coin toss, success/failure)
+- **Poisson:** count of events in fixed interval (emails per hour)
 
-Normal (Gaussian): bell curve, mean = median = mode
+> ML loves the normal distribution. Most algorithms assume it somewhere.
 
-Uniform: all outcomes equally likely
-
-Binomial: yes/no repeated experiments (coin toss, success/failure)
-
-Poisson: count of events in fixed interval (emails per hour)
-
-ML loves the normal distribution. Most algorithms assume it somewhere.
-
-6. Correlation
+### 3.6 Correlation
 
 Measures relationship between two variables:
 
-𝑟
-=
-Cov
-(
-𝑋
-,
-𝑌
-)
-𝜎
-𝑋
-𝜎
-𝑌
-r=
-σ
-X
-	​
+$$r = \frac{Cov(X, Y)}{\sigma_X \sigma_Y}$$
 
-σ
-Y
-	​
+- **r = 1** → perfect positive
+- **r = -1** → perfect negative
+- **r ≈ 0** → no linear relationship
 
-Cov(X,Y)
-	​
+> Pearson correlation is what ML people usually mean.
 
+### 3.7 Covariance
 
-r = 1 → perfect positive
+$$Cov(X, Y) = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{n}$$
 
-r = -1 → perfect negative
+- **Positive** → X↑ then Y↑
+- **Negative** → X↑ then Y↓
+- Magnitude is hard to interpret → use correlation
 
-r ≈ 0 → no linear relationship
+### 3.8 Skewness & Kurtosis
 
-Pearson correlation is what ML people usually mean.
+- **Skewness** → asymmetry of data
+- **Kurtosis** → "peakedness" or tail heaviness
 
-7. Covariance
-𝐶
-𝑜
-𝑣
-(
-𝑋
-,
-𝑌
-)
-=
-∑
-(
-𝑋
-𝑖
-−
-𝑋
-ˉ
-)
-(
-𝑌
-𝑖
-−
-𝑌
-ˉ
-)
-𝑛
-Cov(X,Y)=
-n
-∑(X
-i
-	​
+> Useful to know if your data is weird before feeding it to ML.
 
-−
-X
-ˉ
-)(Y
-i
-	​
+### 3.9 Summary Statistics
 
-−
-Y
-ˉ
-)
-	​
-
-
-Positive → X↑ then Y↑
-
-Negative → X↑ then Y↓
-
-Magnitude is hard to interpret → use correlation
-
-8. Skewness & Kurtosis
-
-Skewness → asymmetry of data
-
-Kurtosis → “peakedness” or tail heaviness
-
-Useful to know if your data is weird before feeding it to ML.
-
-9. Summary Statistics
+```python
 import pandas as pd
 
 df = pd.DataFrame({"Score": [10,20,30,40,50]})
@@ -266,47 +129,44 @@ df.median()    # middle value
 df.std()       # standard deviation
 df.var()       # variance
 df.describe()  # full summary
+```
 
+---
 
-scikit-learn
+## 4. Scikit-learn
 
-1. What is scikit-learn?
+### 4.1 What is Scikit-learn?
 
-Open-source Python library for ML
+- Open-source Python library for ML
+- Built on NumPy, SciPy, matplotlib
+- Focused on supervised and unsupervised learning
+- Provides preprocessing, feature selection, model evaluation, and pipelines
 
-Built on NumPy, SciPy, matplotlib
+### 4.2 Core Features
 
-Focused on supervised and unsupervised learning
+| Feature              | What It Does                                                                               |
+|---------------------|-------------------------------------------------------------------------------------------|
+| Supervised Learning  | Regression, Classification (LinearRegression, LogisticRegression, RandomForest, SVM)      |
+| Unsupervised Learning| Clustering, Dimensionality Reduction (KMeans, PCA)                                        |
+| Model Evaluation     | Accuracy, Precision, Recall, F1, MSE, R², cross-validation                                |
+| Preprocessing        | Scaling, Normalization, Encoding, Imputation                                              |
+| Pipelines            | Chain preprocessing + model in one object                                                 |
 
-Provides preprocessing, feature selection, model evaluation, and pipelines
+### 4.3 Basic Workflow in Scikit-learn
 
-2. Core features
-Feature	What it does
-Supervised Learning	Regression, Classification (LinearRegression, LogisticRegression, RandomForest, SVM)
-Unsupervised Learning	Clustering, Dimensionality Reduction (KMeans, PCA)
-Model Evaluation	Accuracy, Precision, Recall, F1, MSE, R², cross-validation
-Preprocessing	Scaling, Normalization, Encoding, Imputation
-Pipelines	Chain preprocessing + model in one object
+1. **Prepare data** → X (features), y (target)
+2. **Split data** → train/test
+3. **Preprocess** → scale, encode, clean
+4. **Train model** → fit()
+5. **Predict** → predict()
+6. **Evaluate** → metrics
 
-3. Basic workflow in scikit-learn
+### 4.4 Example: Linear Regression
 
-Prepare data → X (features), y (target)
-
-Split data → train/test
-
-Preprocess → scale, encode, clean
-
-Train model → fit()
-
-Predict → predict()
-
-Evaluate → metrics
-
-4. Example: Linear Regression
+```python
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
-
 import numpy as np
 
 # Sample data
@@ -326,10 +186,14 @@ y_pred = model.predict(X_test)
 # Evaluate
 mse = mean_squared_error(y_test, y_pred)
 print("MSE:", mse)
+```
 
-5. Example: Logistic Regression (classification)
+### 4.5 Example: Logistic Regression (Classification)
+
+```python
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+import numpy as np
 
 # Sample data
 X = np.array([[1],[2],[3],[4],[5]])
@@ -340,39 +204,44 @@ model.fit(X, y)
 
 y_pred = model.predict(X)
 print("Accuracy:", accuracy_score(y, y_pred))
+```
 
-6. Preprocessing example
+### 4.6 Preprocessing Example
+
+```python
 from sklearn.preprocessing import StandardScaler
+import numpy as np
 
 X = np.array([[1,100],[2,200],[3,300]])
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 print(X_scaled)
+```
 
+- **StandardScaler** → mean=0, std=1
+- **MinMaxScaler** → scale between 0-1
 
-StandardScaler → mean=0, std=1
+> ML models love scaled data.
 
-MinMaxScaler → scale between 0-1
+### 4.7 Train/Test Split & Cross-Validation
 
-ML models love scaled data.
-
-7. Train/Test split & cross-validation
+```python
 from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 
 model = RandomForestClassifier()
 scores = cross_val_score(model, X, y, cv=5)
 print("CV Scores:", scores)
+```
 
+- **Cross-validation** → avoids overfitting
+- **cv=5** → 5 folds
 
-Cross-validation → avoids overfitting
-
-cv=5 → 5 folds
-
-8. Pipelines
+### 4.8 Pipelines
 
 Combine preprocessing + model:
 
+```python
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
@@ -383,9 +252,13 @@ pipeline = Pipeline([
 ])
 
 pipeline.fit(X_train, y_train)
+```
 
-Scikit-learn ML Workflow (Step by Step)
+---
 
+## 5. Scikit-learn ML Workflow (Step by Step)
+
+```
          ┌───────────────┐
          │   Raw Data    │
          └──────┬────────┘
@@ -447,3 +320,4 @@ Scikit-learn ML Workflow (Step by Step)
       │ - Save using joblib or pickle │
       │ - Deploy / Predict New Data  │
       └──────────────────┘
+```

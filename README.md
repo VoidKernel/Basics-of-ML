@@ -1,10 +1,10 @@
 # Basics of Machine Learning
 
-## 1. What ML Really Is (No Marketing Lies)
+## 1. What ML Really Is
 
 **Machine Learning** = data → algorithm → trained model → predictions
 
-## 2. Types of ML (Pick Your Battlefield)
+## 2. Types of ML
 
 ### 2.1 Supervised Learning (Most Common)
 

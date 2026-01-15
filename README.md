@@ -50,7 +50,7 @@ Agent + environment + rewards.
 3. Feature engineering
 4. Split data
 5. Choose model
-6. Train
+6. [Train](https://github.com/VoidKernel/Basics-of-ML/blob/main/Train.md)
 7. Evaluate
 8. Improve
 9. Deploy

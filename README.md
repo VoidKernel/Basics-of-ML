@@ -49,7 +49,7 @@ Agent + environment + rewards.
 2. Clean data
 3. Feature engineering
 4. Split data
-5. [Choose model](ttps://github.com/VoidKernel/Basics-of-ML/blob/main/Choose_Model.md)
+5. [Choose model](https://github.com/VoidKernel/Basics-of-ML/blob/main/Choose_Model.md)
 6. [Train](https://github.com/VoidKernel/Basics-of-ML/blob/main/Train.md)
 7. Evaluate
 8. Improve

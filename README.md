@@ -57,6 +57,9 @@ Agent + environment + rewards.
 
 > **Miss one → garbage model.**
 
+![ML Model Pipeline](ML_Model_Pipeline.png)
+
+
 ## [4. Data Basics (The Part Everyone Underestimates)](https://github.com/VoidKernel/Basics-of-ML/blob/main/DataSplit.md)
 
 

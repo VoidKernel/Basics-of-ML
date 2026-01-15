@@ -14,8 +14,8 @@
 - house features → price
 
 **Algorithms:**
-- Linear Regression
-- Logistic Regression
+- [Linear Regression](https://github.com/VoidKernel/Basics-of-ML/blob/main/SupervisedLearning.md#1-linear-regression)
+- [Logistic Regression](https://github.com/VoidKernel/Basics-of-ML/blob/main/SupervisedLearning.md#2-logistic-regression)
 - Decision Tree
 - Random Forest
 - SVM
@@ -64,4 +64,104 @@ Agent + environment + rewards.
 - **70%** training
 - **15%** validation
 - **15%** testing
+## 5. Model Evaluation (Don't Trust Your Model Blindly)
+
+### Regression Metrics
+- **MAE** (Mean Absolute Error)
+- **MSE** (Mean Squared Error)
+- **RMSE** (Root Mean Squared Error)
+- **R²** (R-squared)
+
+### Classification Metrics
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1-score**
+- **Confusion Matrix**
+
+**Example:**
+
+```python
+from sklearn.metrics import accuracy_score
+
+accuracy = accuracy_score(y_test, y_pred)
+print(accuracy)
+```
+
+---
+
+## 6. Overfitting vs Underfitting (The Eternal Pain)
+
+- **Overfitting:** memorizes training data, fails in real world
+- **Underfitting:** too dumb to learn patterns
+
+**Fix with:**
+- more data
+- simpler model
+- regularization
+- cross-validation
+
+---
+
+## [7. What You Should Learn Next (Serious Path)](https://github.com/VoidKernel/Basics-of-ML/blob/main/Phase1%E2%80%93Foundations.md)
+
+### Phase 1 – Foundations
+- Python (numpy, pandas)
+- statistics basics
+- scikit-learn
+- data preprocessing
+
+### Phase 2 – Models
+- Decision Trees
+- Random Forest
+- XGBoost
+- SVM
+
+### Phase 3 – Deep Learning
+- Neural Networks
+- PyTorch or TensorFlow
+- CNN (images)
+- RNN/Transformers (text)
+
+### Phase 4 – Real World
+- model saving (pickle/joblib)
+- REST APIs (FastAPI)
+- Docker
+- monitoring
+
+---
+
+## 8. Practical Learning Plan (2 Weeks)
+
+### Day 1–3
+- numpy, pandas
+- data cleaning
+- plotting
+
+### Day 4–6
+- linear & logistic regression
+- metrics
+
+### Day 7–10
+- decision trees
+- random forest
+- feature engineering
+
+### Day 11–14
+**Build 1 project:**
+- spam classifier
+- house price predictor
+- sentiment analysis
+
+---
+
+## 9. Brutally Honest Advice
+
+- ML is **80%** data cleaning
+- **15%** debugging
+- **5%** actual "modeling"
+
+5% actual “modeling”
+
+
 
